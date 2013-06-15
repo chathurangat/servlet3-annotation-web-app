@@ -1,5 +1,8 @@
 package com.sample.web.servlet;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
@@ -24,9 +27,11 @@ import java.io.IOException;
 )
 public class HelloServlet extends HttpServlet{
 
+    private static final Logger logger = LoggerFactory.getLogger(HelloServlet.class);
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println(" inside hello servlet and we can guaranteed that the relevant filter chain was executed in order ");
+        logger.info(" this servlet will be executed after executing the all relevant filters according to their order ");
         response.setContentType("text/plain");
         response.getWriter().write(" Welcome to Servlet Annotation with Servlet 3");
     }
