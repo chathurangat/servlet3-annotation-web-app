@@ -1,0 +1,21 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+
+  <display-name>Archetype Created Web Application</display-name>
+
+
+   <!--adding the execution order for the annotated filters-->
+    <!--filter one get executed first-->
+    <filter-mapping>
+        <filter-name>helloFilterOne</filter-name>
+    </filter-mapping>
+
+    <!--filter two get executed after filter one-->
+    <filter-mapping>
+        <filter-name>helloFilterTwo</filter-name>
+    </filter-mapping>
+
+</web-app>
